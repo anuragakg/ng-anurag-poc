@@ -1,0 +1,11 @@
+<h2>Subscribe Alert</h2>
+<app-alert [selectedTypes]="selected" *ngIf="selected.length" (close)="OnCloseBox()"></app-alert>
+<form [formGroup]="form" (ngSubmit)="submit()"> 
+<ul>
+
+    <label for="" formArrayName="types" *ngFor="let type of typesFormArray.controls;let i=index">
+        <input type="checkbox" [formControlName]="i">{{typesData[i].name}}
+    </label>
+</ul>
+<button type="submit">Submit</button>
+</form>
